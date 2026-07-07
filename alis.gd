@@ -1,18 +1,19 @@
-extends AnimatedSprite2D
+extends CharacterBody2D
+var speed = 5000
 func _process(delta: float) -> void:
-	if Input.is_action_pressed('left'):
-		play("left-walk")
-	if Input.is_action_just_released("left"):
-		play("left")
-	if Input.is_action_pressed('right'):
-		play("right-walk")
-	if Input.is_action_just_released("right"):
-		play("right")
-	if Input.is_action_pressed('up'):
-		play("back-walk")
-	if Input.is_action_just_released("up"):
-		play("back")
-	if Input.is_action_pressed('down'):
-		play("front-walk")
-	if Input.is_action_just_released("down"):
-		play("front")
+	if Input.is_action_pressed("up"):
+		velocity.y = -1*speed * delta
+		velocity.x = 0
+	elif Input.is_action_pressed("down"):
+		velocity.y = speed * delta
+		velocity.x = 0
+	elif Input.is_action_pressed("left"):
+		velocity.x = -1*speed * delta
+		velocity.y = 0
+	elif Input.is_action_pressed("right"):
+		velocity.x = speed * delta
+		velocity.y = 0
+	else:
+		velocity = Vector2(0,0)
+func _physics_process(delta: float) -> void:
+	move_and_slide()
