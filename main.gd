@@ -5,3 +5,6 @@ var loaded = false
 var clear = false
 var text = ''
 var paused = false
+var song = "Home.mp3"
+var songreset = true
+var songplaying = true

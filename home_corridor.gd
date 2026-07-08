@@ -1,4 +1,9 @@
 extends Node2D
+func _ready() -> void:
+	if Main.song != "Home.mp3":
+		Main.song = "Home.mp3"
+		Main.songplaying = true
+		Main.songreset = true
 
 func _process(delta: float) -> void:
 	if Main.clear:
