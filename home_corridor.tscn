@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://ce7rpiqtuqaew"]
+
+[ext_resource type="Script" uid="uid://dhggvmcvsq5ss" path="res://home_corridor.gd" id="1_71riu"]
+[ext_resource type="Texture2D" uid="uid://ctm0rosi3wnqv" path="res://Home-corridor.png" id="1_e41ok"]
+[ext_resource type="Script" uid="uid://bsvpyel7tyxea" path="res://letters.gd" id="3_gubr0"]
+[ext_resource type="Script" uid="uid://dp0kq2kuukrt" path="res://cress.gd" id="4_u5rl6"]
+[ext_resource type="Script" uid="uid://cjmlly6fu6wq7" path="res://parents_room.gd" id="5_kqpjv"]
+[ext_resource type="Script" uid="uid://cqb6nbdivbamr" path="res://spare_room.gd" id="6_ki7my"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71riu"]
+size = Vector2(20, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gubr0"]
+size = Vector2(110, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5rl6"]
+size = Vector2(20, 163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqpjv"]
+size = Vector2(421, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki7my"]
+size = Vector2(20, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8j56"]
+size = Vector2(325, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ldq"]
+size = Vector2(29, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjyb5"]
+size = Vector2(109, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e41ok"]
+size = Vector2(73, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2uaj"]
+size = Vector2(40, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8miws"]
+size = Vector2(35, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jne2j"]
+size = Vector2(34, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iovuq"]
+size = Vector2(41, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_537vo"]
+size = Vector2(43, 7)
+
+[node name="Home-corridor" type="Node2D" unique_id=2064376906]
+script = ExtResource("1_71riu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1509824738]
+texture = ExtResource("1_e41ok")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1286801542]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1959239964]
+position = Vector2(42, 56)
+shape = SubResource("RectangleShape2D_71riu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1850747665]
+position = Vector2(88, 79.5)
+shape = SubResource("RectangleShape2D_gubr0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1383741706]
+position = Vector2(142, 8.5)
+shape = SubResource("RectangleShape2D_u5rl6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=86498745]
+position = Vector2(-58, -66.75)
+shape = SubResource("RectangleShape2D_kqpjv")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=291969835]
+position = Vector2(-263, -19.5)
+shape = SubResource("RectangleShape2D_ki7my")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=964074754]
+position = Vector2(-110.5, 30)
+shape = SubResource("RectangleShape2D_v8j56")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=133965836]
+position = Vector2(121.5, -45)
+shape = SubResource("RectangleShape2D_n2ldq")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1092393103]
+position = Vector2(-117.5, 5.5)
+shape = SubResource("RectangleShape2D_wjyb5")
+
+[node name="Entry1" type="Area2D" parent="." unique_id=1804109560]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry1" unique_id=1065250728]
+position = Vector2(92, 62)
+shape = SubResource("RectangleShape2D_e41ok")
+
+[node name="Spawn" type="Node2D" parent="Entry1" unique_id=940702186]
+position = Vector2(92, 12)
+
+[node name="Entry2" type="Area2D" parent="." unique_id=479852030]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry2" unique_id=1849340904]
+position = Vector2(30, -57)
+shape = SubResource("RectangleShape2D_k2uaj")
+
+[node name="Spawn" type="Node2D" parent="Entry2" unique_id=1700615830]
+position = Vector2(30, -48)
+
+[node name="Interactions" type="Node2D" parent="." unique_id=1062244140]
+
+[node name="Letters" type="Area2D" parent="Interactions" unique_id=1852828084]
+script = ExtResource("3_gubr0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Letters" unique_id=104006743]
+position = Vector2(-97.5, -17)
+shape = SubResource("RectangleShape2D_8miws")
+
+[node name="Cress" type="Area2D" parent="Interactions" unique_id=1137188618]
+script = ExtResource("4_u5rl6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Cress" unique_id=216754311]
+position = Vector2(-147, -16)
+shape = SubResource("RectangleShape2D_jne2j")
+
+[node name="ParentsRoom" type="Area2D" parent="Interactions" unique_id=1202788]
+script = ExtResource("5_kqpjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/ParentsRoom" unique_id=1049083076]
+position = Vector2(-91.5, -55)
+shape = SubResource("RectangleShape2D_iovuq")
+
+[node name="SpareRoom" type="Area2D" parent="Interactions" unique_id=134243395]
+script = ExtResource("6_ki7my")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/SpareRoom" unique_id=1851958435]
+position = Vector2(-225.5, -53.5)
+shape = SubResource("RectangleShape2D_537vo")
+
+[connection signal="area_entered" from="Entry1" to="." method="_on_entry_1_area_entered"]
+[connection signal="area_entered" from="Entry2" to="." method="_on_entry_2_area_entered"]
+[connection signal="area_entered" from="Interactions/Letters" to="Interactions/Letters" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/Letters" to="Interactions/Letters" method="_on_area_exited"]
+[connection signal="area_entered" from="Interactions/Cress" to="Interactions/Cress" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/Cress" to="Interactions/Cress" method="_on_area_exited"]
+[connection signal="area_entered" from="Interactions/ParentsRoom" to="Interactions/ParentsRoom" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/ParentsRoom" to="Interactions/ParentsRoom" method="_on_area_exited"]
+[connection signal="area_entered" from="Interactions/SpareRoom" to="Interactions/SpareRoom" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/SpareRoom" to="Interactions/SpareRoom" method="_on_area_exited"]

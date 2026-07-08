@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://cv6hyow3vbocp"]
+
+[ext_resource type="Texture2D" uid="uid://bgr5upv5oclwk" path="res://Home-alis.png" id="1_rkv7d"]
+[ext_resource type="Script" uid="uid://cmyhxnw5qr30u" path="res://home_alis.gd" id="1_tvcfr"]
+[ext_resource type="Script" uid="uid://c382e8hebi7fh" path="res://boxes.gd" id="3_hi5cr"]
+[ext_resource type="Script" uid="uid://og5dwk1ey51j" path="res://clothes_pile.gd" id="4_ayn0x"]
+[ext_resource type="Script" uid="uid://d0firj8nptqwf" path="res://swagbag.gd" id="5_chvsv"]
+[ext_resource type="Script" uid="uid://bpjo7k6vgo7c6" path="res://wires.gd" id="6_0571k"]
+[ext_resource type="Script" uid="uid://c2hjfkfctkamd" path="res://bed.gd" id="7_ayn0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvcfr"]
+size = Vector2(85.5, 12.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o6lb"]
+size = Vector2(64, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rg02x"]
+size = Vector2(103, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni8u4"]
+size = Vector2(32, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcldj"]
+size = Vector2(86, 55)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08uwa"]
+radius = 20.09975
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao1hw"]
+size = Vector2(23, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hi5cr"]
+size = Vector2(19, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chvsv"]
+size = Vector2(79, 66)
+
+[node name="Home-alis" type="Node2D" unique_id=1767385703]
+script = ExtResource("1_tvcfr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=706296307]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_rkv7d")
+
+[node name="Entry1" type="Area2D" parent="." unique_id=1455678694]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry1" unique_id=340898541]
+position = Vector2(-58.75, 30.25)
+shape = SubResource("RectangleShape2D_tvcfr")
+
+[node name="Spawn" type="Node2D" parent="Entry1" unique_id=1240652618]
+position = Vector2(-59, -9)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1438720242]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=850730350]
+position = Vector2(1, 0)
+polygon = PackedVector2Array(-13, -12, -13, 38, -104, 39, -104, -124, -29, -124, -30, -156, 178, -156, 179, -14, -13, -13, -3, 8, 204, 10, 204, -171, -123, -171, -125, 24, -125, 55, -5, 55, -4, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=648876096]
+position = Vector2(30, -35.5)
+shape = SubResource("RectangleShape2D_6o6lb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=385820030]
+position = Vector2(127.5, -42.5)
+shape = SubResource("RectangleShape2D_rg02x")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=943826321]
+position = Vector2(163, -84.5)
+shape = SubResource("RectangleShape2D_ni8u4")
+
+[node name="Interactions" type="Node2D" parent="." unique_id=650839725]
+
+[node name="Boxes" type="Area2D" parent="Interactions" unique_id=117750385]
+script = ExtResource("3_hi5cr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Boxes" unique_id=599404403]
+position = Vector2(-62, -138.5)
+shape = SubResource("RectangleShape2D_rcldj")
+
+[node name="ClothesPile" type="Area2D" parent="Interactions" unique_id=558775473]
+script = ExtResource("4_ayn0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/ClothesPile" unique_id=1080813773]
+position = Vector2(104, -113)
+shape = SubResource("CircleShape2D_08uwa")
+
+[node name="swagbag" type="Area2D" parent="Interactions" unique_id=578843933]
+script = ExtResource("5_chvsv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/swagbag" unique_id=578717448]
+position = Vector2(109.5, -155)
+shape = SubResource("RectangleShape2D_ao1hw")
+
+[node name="wires" type="Area2D" parent="Interactions" unique_id=959975872]
+script = ExtResource("6_0571k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/wires" unique_id=1422354768]
+position = Vector2(163.5, -142.5)
+shape = SubResource("RectangleShape2D_hi5cr")
+
+[node name="bed" type="Area2D" parent="Interactions" unique_id=1727543410]
+script = ExtResource("7_ayn0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/bed" unique_id=676202396]
+position = Vector2(103.5, -47)
+shape = SubResource("RectangleShape2D_chvsv")
+
+[node name="Entry2" type="Area2D" parent="." unique_id=1502584145]
+
+[node name="Spawn" type="Node2D" parent="Entry2" unique_id=188734951]
+position = Vector2(81, -122)
+
+[connection signal="area_entered" from="Entry1" to="." method="_on_entry_1_area_entered"]
+[connection signal="area_entered" from="Interactions/Boxes" to="Interactions/Boxes" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/Boxes" to="Interactions/Boxes" method="_on_area_exited"]
+[connection signal="area_entered" from="Interactions/ClothesPile" to="Interactions/ClothesPile" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/ClothesPile" to="Interactions/ClothesPile" method="_on_area_exited"]
+[connection signal="area_entered" from="Interactions/swagbag" to="Interactions/swagbag" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/swagbag" to="Interactions/swagbag" method="_on_area_exited"]
+[connection signal="area_entered" from="Interactions/wires" to="Interactions/wires" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/wires" to="Interactions/wires" method="_on_area_exited"]
+[connection signal="area_entered" from="Interactions/bed" to="Interactions/bed" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/bed" to="Interactions/bed" method="_on_area_exited"]

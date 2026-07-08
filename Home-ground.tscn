@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://br7fgap7si5w7"]
 
+[ext_resource type="Script" uid="uid://bj5nmjvykn04x" path="res://home_ground.gd" id="1_7dvye"]
 [ext_resource type="Texture2D" uid="uid://jabjdl210pwg" path="res://Home-ground.png" id="1_i8h6x"]
+[ext_resource type="Script" uid="uid://dcg3jsjn3wqoa" path="res://Home-ground-entry_2.gd" id="2_q33pi"]
+[ext_resource type="Script" uid="uid://8dr3wxva7mec" path="res://picture.gd" id="5_t0q8d"]
+[ext_resource type="Script" uid="uid://4b1sl5j4fv7e" path="res://flowers.gd" id="6_t0q8d"]
+[ext_resource type="Script" uid="uid://bp87it7xmor8n" path="res://cooking.gd" id="7_yosss"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i8h6x"]
 
@@ -49,7 +54,20 @@ radius = 10.440307
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8h6x"]
 size = Vector2(98, 8.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wdnr"]
+size = Vector2(83, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy6cr"]
+size = Vector2(55, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx04o"]
+size = Vector2(29, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g18km"]
+size = Vector2(67, 15)
+
 [node name="Home-Ground" type="Node2D" unique_id=1111570868]
+script = ExtResource("1_7dvye")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=860016520]
 position = Vector2(1, 0)
@@ -124,5 +142,50 @@ shape = SubResource("CircleShape2D_6wdnr")
 [node name="Entry1" type="Area2D" parent="." unique_id=490953697]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entry1" unique_id=577657663]
-position = Vector2(103, 177.25)
+position = Vector2(102, 194)
 shape = SubResource("RectangleShape2D_i8h6x")
+
+[node name="Spawn" type="Node2D" parent="Entry1" unique_id=1241304845]
+position = Vector2(103, 130)
+
+[node name="Entry2" type="Area2D" parent="." unique_id=1147287664]
+script = ExtResource("2_q33pi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry2" unique_id=1560211609]
+position = Vector2(223, -75)
+shape = SubResource("RectangleShape2D_6wdnr")
+
+[node name="Spawn" type="Node2D" parent="Entry2" unique_id=2100641282]
+position = Vector2(222, -57)
+
+[node name="Interactions" type="Node2D" parent="." unique_id=1615153311]
+
+[node name="Picture" type="Area2D" parent="Interactions" unique_id=1123981618]
+script = ExtResource("5_t0q8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Picture" unique_id=1004561553]
+position = Vector2(110, 17)
+shape = SubResource("RectangleShape2D_dy6cr")
+
+[node name="Flowers" type="Area2D" parent="Interactions" unique_id=1579138559]
+script = ExtResource("6_t0q8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Flowers" unique_id=476416329]
+position = Vector2(56, 15)
+shape = SubResource("RectangleShape2D_rx04o")
+
+[node name="Cooking" type="Area2D" parent="Interactions" unique_id=1949836323]
+script = ExtResource("7_yosss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Cooking" unique_id=686081028]
+position = Vector2(-178, -13)
+shape = SubResource("RectangleShape2D_g18km")
+
+[connection signal="area_entered" from="Entry2" to="." method="_on_entry_2_area_entered"]
+[connection signal="body_entered" from="Entry2" to="." method="_on_entry_2_body_entered"]
+[connection signal="area_entered" from="Interactions/Picture" to="Interactions/Picture" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/Picture" to="Interactions/Picture" method="_on_area_exited"]
+[connection signal="area_entered" from="Interactions/Flowers" to="Interactions/Flowers" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/Flowers" to="Interactions/Flowers" method="_on_area_exited"]
+[connection signal="area_entered" from="Interactions/Cooking" to="Interactions/Cooking" method="_on_area_entered"]
+[connection signal="area_exited" from="Interactions/Cooking" to="Interactions/Cooking" method="_on_area_exited"]

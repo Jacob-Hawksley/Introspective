@@ -2,7 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://b8as3d4g7hje7" path="res://Alis.png" id="1_00rl1"]
 [ext_resource type="Script" uid="uid://djeylhry1qrl6" path="res://alis.gd" id="2_3cyp8"]
+[ext_resource type="FontFile" uid="uid://c3ds85kdgkue5" path="res://determination/determination.ttf" id="2_3jg7e"]
 [ext_resource type="Script" uid="uid://dmqmifa8i8kuk" path="res://alis_sprite.gd" id="3_3cyp8"]
+[ext_resource type="Script" uid="uid://brlp01js71crm" path="res://text.gd" id="3_w7g3c"]
+[ext_resource type="Texture2D" uid="uid://538sjhwrnv6j" path="res://Textbox.png" id="3_w61ha"]
+[ext_resource type="Script" uid="uid://ckmn54kdvnv4f" path="res://textbox.gd" id="4_0ylu0"]
+
+[sub_resource type="Theme" id="Theme_w61ha"]
+default_font = ExtResource("2_3jg7e")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jg7e"]
 atlas = ExtResource("1_00rl1")
@@ -190,6 +197,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00rl1"]
 size = Vector2(13, 6)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cyp8"]
+
 [node name="Alis" type="CharacterBody2D" unique_id=1416749852]
 z_index = 3
 script = ExtResource("2_3cyp8")
@@ -197,12 +206,35 @@ script = ExtResource("2_3cyp8")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1044497061]
 zoom = Vector2(2, 2)
 
+[node name="text" type="RichTextLabel" parent="Camera2D" unique_id=396759154]
+z_index = 3
+offset_left = -238.0
+offset_top = 72.0
+offset_right = 227.0
+offset_bottom = 149.0
+theme = SubResource("Theme_w61ha")
+shortcut_keys_enabled = false
+script = ExtResource("3_w7g3c")
+
+[node name="Textbox" type="Sprite2D" parent="Camera2D" unique_id=1422258675]
+z_index = 2
+position = Vector2(1.000001, 110)
+scale = Vector2(8.1015625, 2.7343752)
+texture = ExtResource("3_w61ha")
+script = ExtResource("4_0ylu0")
+
 [node name="Alis-Sprite" type="AnimatedSprite2D" parent="." unique_id=445990876]
 sprite_frames = SubResource("SpriteFrames_mlqwh")
-animation = &"front"
+animation = &"right"
 autoplay = "front"
 script = ExtResource("3_3cyp8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1763675042]
 position = Vector2(-0.5, 22)
 shape = SubResource("RectangleShape2D_00rl1")
+
+[node name="Interactions" type="Area2D" parent="." unique_id=1415456761]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions" unique_id=839443398]
+position = Vector2(0, 13)
+shape = SubResource("CapsuleShape2D_3cyp8")
