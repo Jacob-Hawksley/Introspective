@@ -8,6 +8,11 @@ var paused = false
 var song = "Home.mp3"
 var songreset = true
 var songplaying = true
-var story = 0
+var happened = {
+	'wakeup' : false,
+	'waitingoutside' : false,
+	'goschool' : false,
+	'doorconfrontation':false
+}
 var decision = []
-var decisionresponse = null
+var decisionevent = ''

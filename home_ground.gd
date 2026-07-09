@@ -20,6 +20,7 @@ func _on_entry_2_body_entered(body: Node2D) -> void:
 
 
 func _on_entry_1_area_entered(area: Area2D) -> void:
-	if Main.story == 1:
+	if not Main.happened["goschool"]:
+		Main.decisionevent = "goschool"
 		Main.text = ["Are you ready to leave?"]
 		Main.decision = ["Yes","Not yet"]

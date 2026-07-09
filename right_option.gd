@@ -13,6 +13,6 @@ func _process(delta: float) -> void:
 			grab_focus()
 			highlight = true
 	if has_focus() and Input.is_action_just_pressed("accept"):
-		if Main.story == 1:
+		if Main.decisionevent == "goschool":
 			Main.decision = []
-			Main.decisionresponse = null
+			Main.decisionevent = ''
