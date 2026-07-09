@@ -16,3 +16,4 @@ var happened = {
 }
 var decision = []
 var decisionevent = ''
+var movementoverride = null

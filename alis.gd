@@ -3,7 +3,8 @@ var speed = 5000
 
 	
 func _process(delta: float) -> void:
-	if Main.text[0] == '' and Main.decision == []:
+	
+	if Main.text[0] == '' and Main.decision == [] and not Main.paused:
 		if Input.is_action_pressed("up"):
 			velocity.y = -1*speed * delta
 			velocity.x = 0
@@ -21,4 +22,7 @@ func _process(delta: float) -> void:
 	else:
 		velocity = Vector2(0,0)
 func _physics_process(delta: float) -> void:
+	if Main.movementoverride != null:
+		velocity.x = Main.movementoverride.x
+		velocity.y = Main.movementoverride.y
 	move_and_slide()

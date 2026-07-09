@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 func _process(delta: float) -> void:
-	if Main.text[0] == '' and Main.decision == []:
+	if Main.text[0] == '' and Main.decision == [] and not Main.paused:
 		if Input.is_action_pressed('up'):
 			play("back-walk")
 		elif Input.is_action_just_released("up"):
