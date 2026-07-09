@@ -3,7 +3,7 @@ var speed = 5000
 
 	
 func _process(delta: float) -> void:
-	if Main.text == '':
+	if Main.text[0] == '' and Main.decision == []:
 		if Input.is_action_pressed("up"):
 			velocity.y = -1*speed * delta
 			velocity.x = 0

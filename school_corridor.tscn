@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c5wsruwl8r6t5"]
+
+[ext_resource type="Texture2D" uid="uid://bqwt2pwv5q3q4" path="res://School-corridor.png" id="1_eergs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fdwq"]
+size = Vector2(74, 18)
+
+[node name="School-corridor" type="Node2D" unique_id=100738474]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1532023604]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_eergs")
+
+[node name="Entry1" type="Area2D" parent="." unique_id=646117190]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry1" unique_id=1004635521]
+position = Vector2(-4, 300)
+shape = SubResource("RectangleShape2D_5fdwq")
+
+[node name="Spawn" type="Node2D" parent="Entry1" unique_id=1062150694]
+position = Vector2(-3, 254)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1404485352]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2043513156]
+polygon = PackedVector2Array(-40, 205, -41, 309, 35, 309, 35, 205, 248, 205, 247, 136, 79, 136, 79, 148, 55, 148, 55, 136, -111, 135, -251, 136, -251, 206, -40, 205, -57, 226, -268, 224, -268, 110, 118, 111, 264, 111, 263, 224, 49, 223, 50, 326, -60, 327, -57, 226)

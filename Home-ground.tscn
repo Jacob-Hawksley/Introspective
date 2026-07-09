@@ -181,6 +181,7 @@ script = ExtResource("7_yosss")
 position = Vector2(-178, -13)
 shape = SubResource("RectangleShape2D_g18km")
 
+[connection signal="area_entered" from="Entry1" to="." method="_on_entry_1_area_entered"]
 [connection signal="area_entered" from="Entry2" to="." method="_on_entry_2_area_entered"]
 [connection signal="body_entered" from="Entry2" to="." method="_on_entry_2_body_entered"]
 [connection signal="area_entered" from="Interactions/Picture" to="Interactions/Picture" method="_on_area_entered"]

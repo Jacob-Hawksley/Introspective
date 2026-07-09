@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 
 
 
+
 func _on_entry_1_area_entered(area: Area2D) -> void:
 	Main.room = "Home-Ground"
 	Main.entry = "Entry2"

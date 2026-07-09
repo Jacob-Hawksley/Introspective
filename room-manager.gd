@@ -24,3 +24,9 @@ func _process(delta: float) -> void:
 			var room = preload("res://home_alis.tscn").instantiate()
 			self.get_parent().add_child(room)
 			player.position = room.find_child(Main.entry).find_child("Spawn").position
+		elif Main.room == "School-Corridor":
+			Main.loaded = true
+			var room = preload("res://school_corridor.tscn").instantiate()
+			self.get_parent().add_child(room)
+			player.position = room.find_child(Main.entry).find_child("Spawn").position
+			

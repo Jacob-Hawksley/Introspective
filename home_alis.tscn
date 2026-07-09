@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bgr5upv5oclwk" path="res://Home-alis.png" id="1_rkv7d"]
 [ext_resource type="Script" uid="uid://cmyhxnw5qr30u" path="res://home_alis.gd" id="1_tvcfr"]
 [ext_resource type="Script" uid="uid://c382e8hebi7fh" path="res://boxes.gd" id="3_hi5cr"]
-[ext_resource type="Script" uid="uid://og5dwk1ey51j" path="res://clothes_pile.gd" id="4_ayn0x"]
 [ext_resource type="Script" uid="uid://d0firj8nptqwf" path="res://swagbag.gd" id="5_chvsv"]
 [ext_resource type="Script" uid="uid://bpjo7k6vgo7c6" path="res://wires.gd" id="6_0571k"]
 [ext_resource type="Script" uid="uid://c2hjfkfctkamd" path="res://bed.gd" id="7_ayn0x"]
@@ -22,9 +21,6 @@ size = Vector2(32, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcldj"]
 size = Vector2(86, 55)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_08uwa"]
-radius = 20.09975
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao1hw"]
 size = Vector2(23, 4)
@@ -78,13 +74,6 @@ script = ExtResource("3_hi5cr")
 position = Vector2(-62, -138.5)
 shape = SubResource("RectangleShape2D_rcldj")
 
-[node name="ClothesPile" type="Area2D" parent="Interactions" unique_id=558775473]
-script = ExtResource("4_ayn0x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/ClothesPile" unique_id=1080813773]
-position = Vector2(104, -113)
-shape = SubResource("CircleShape2D_08uwa")
-
 [node name="swagbag" type="Area2D" parent="Interactions" unique_id=578843933]
 script = ExtResource("5_chvsv")
 
@@ -109,13 +98,11 @@ shape = SubResource("RectangleShape2D_chvsv")
 [node name="Entry2" type="Area2D" parent="." unique_id=1502584145]
 
 [node name="Spawn" type="Node2D" parent="Entry2" unique_id=188734951]
-position = Vector2(81, -122)
+position = Vector2(40, -117)
 
 [connection signal="area_entered" from="Entry1" to="." method="_on_entry_1_area_entered"]
 [connection signal="area_entered" from="Interactions/Boxes" to="Interactions/Boxes" method="_on_area_entered"]
 [connection signal="area_exited" from="Interactions/Boxes" to="Interactions/Boxes" method="_on_area_exited"]
-[connection signal="area_entered" from="Interactions/ClothesPile" to="Interactions/ClothesPile" method="_on_area_entered"]
-[connection signal="area_exited" from="Interactions/ClothesPile" to="Interactions/ClothesPile" method="_on_area_exited"]
 [connection signal="area_entered" from="Interactions/swagbag" to="Interactions/swagbag" method="_on_area_entered"]
 [connection signal="area_exited" from="Interactions/swagbag" to="Interactions/swagbag" method="_on_area_exited"]
 [connection signal="area_entered" from="Interactions/wires" to="Interactions/wires" method="_on_area_entered"]
