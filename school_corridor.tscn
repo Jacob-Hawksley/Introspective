@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dyngat6uor7e0" path="res://waterfountain.gd" id="2_5fdwq"]
 [ext_resource type="Script" uid="uid://6o3kgyk3a1sj" path="res://classdoor.gd" id="3_bgn6f"]
 [ext_resource type="Texture2D" uid="uid://cn2rbltevxhr1" path="res://School-corridor-open.png" id="3_sn1cj"]
+[ext_resource type="Texture2D" uid="uid://fleuxpsqg34t" path="res://Jerod.png" id="6_sn1cj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1y5po"]
 animations = [{
@@ -34,7 +35,93 @@ size = Vector2(44, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jium6"]
 size = Vector2(50, 23)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y5po"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(127, 0, 55, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47cfw"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(191, 0, 55, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho7oy"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(255, 0, 55, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f8e2"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(319, 0, 55, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mg72"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(383, 0, 55, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f8rn"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(447, 0, 55, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b8yd"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(511, 0, 55, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfu62"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(575, 0, 55, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng0df"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(639, 0, 55, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34wi1"]
+atlas = ExtResource("6_sn1cj")
+region = Rect2(63, 0, 55, 65)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0oaa4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y5po")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47cfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho7oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f8e2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mg72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f8rn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b8yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfu62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng0df")
+}],
+"loop": false,
+"name": &"flick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34wi1")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="School-corridor" type="Node2D" unique_id=100738474]
 script = ExtResource("1_0oaa4")
@@ -75,9 +162,13 @@ script = ExtResource("3_bgn6f")
 position = Vector2(-211, 138.5)
 shape = SubResource("RectangleShape2D_jium6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Interactions/classdoor" unique_id=1463384611]
-visible = false
+[node name="jerod" type="AnimatedSprite2D" parent="Interactions/classdoor" unique_id=1463384611]
+position = Vector2(29, -44)
 sprite_frames = SubResource("SpriteFrames_0oaa4")
+animation = &"flick"
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
 
 [connection signal="area_entered" from="Interactions/waterfountain" to="Interactions/waterfountain" method="_on_area_entered"]
 [connection signal="area_exited" from="Interactions/waterfountain" to="Interactions/waterfountain" method="_on_area_exited"]
