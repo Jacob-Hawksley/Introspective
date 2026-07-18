@@ -30,10 +30,14 @@ func _on_isready() -> void:
 	advance1 = false
 	$Interactions/classdoor/jerod.play("flick")
 	Main.text = ["Jerod ¬Whatcha gonna do bout it?", "Jerod ¬Cry home to your big brother?"]
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(4).timeout
 	Main.movementoverride = Vector2(100,100)
 	Main.text = ["Jerod ¬Hey, where are you running off to"]
 	await get_tree().create_timer(0.25).timeout
 	Main.movementoverride = Vector2(100,0)
 	await get_tree().create_timer(2).timeout
 	Main.movementoverride = Vector2(0,0)
+	Main.text = ["Jerod ¬Get back here!"]
+	Main.room = "Closet"
+	Main.entry = "Entry1"
+	Main.loaded = false
