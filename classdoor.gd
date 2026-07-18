@@ -11,6 +11,5 @@ func _process(delta: float) -> void:
 	if active and Input.is_action_just_pressed("accept") and Main.text == ['']:
 		if not Main.happened["doorconfrontation"]:
 			Main.text = text
-			Main.decisionevent = "doorconfrontaion"
-			Main.happened["doorconfrontation"] = true
+			Main.decisionevent = "doorconfrontation"
 			active = false

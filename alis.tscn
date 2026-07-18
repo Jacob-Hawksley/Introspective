@@ -222,6 +222,8 @@ offset_top = 72.0
 offset_right = 227.0
 offset_bottom = 122.0
 theme = SubResource("Theme_w61ha")
+theme_override_colors/font_outline_color = Color(0.6675812, 0.7338332, 0.68875146, 1)
+theme_override_constants/outline_size = 2
 shortcut_keys_enabled = false
 script = ExtResource("3_w7g3c")
 

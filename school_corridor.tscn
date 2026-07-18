@@ -119,7 +119,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_34wi1")
 }],
 "loop": false,
-"name": &"new_animation",
+"name": &"point",
 "speed": 5.0
 }]
 
@@ -159,17 +159,17 @@ shape = SubResource("RectangleShape2D_bgn6f")
 script = ExtResource("3_bgn6f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/classdoor" unique_id=557223067]
-position = Vector2(-211, 138.5)
+position = Vector2(-211, 134)
 shape = SubResource("RectangleShape2D_jium6")
 
 [node name="jerod" type="AnimatedSprite2D" parent="Interactions/classdoor" unique_id=1463384611]
+visible = false
 position = Vector2(29, -44)
 sprite_frames = SubResource("SpriteFrames_0oaa4")
-animation = &"flick"
+animation = &"point"
 autoplay = "default"
-frame = 7
-frame_progress = 1.0
 
+[connection signal="isready" from="." to="." method="_on_isready"]
 [connection signal="area_entered" from="Interactions/waterfountain" to="Interactions/waterfountain" method="_on_area_entered"]
 [connection signal="area_exited" from="Interactions/waterfountain" to="Interactions/waterfountain" method="_on_area_exited"]
 [connection signal="area_entered" from="Interactions/classdoor" to="Interactions/classdoor" method="_on_area_entered"]
